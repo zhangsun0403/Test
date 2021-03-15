@@ -2,9 +2,7 @@ package jijiguowang.china.us;
 
 import org.junit.Test;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class kk {
 
@@ -12,6 +10,13 @@ public class kk {
     @Test
     public void jk(){
 
-        Set s=new TreeSet();
+        Random r=new Random();
+        Set s=new HashSet();Set s2=new LinkedHashSet();
+
+        for (int i=0;i<30;i++){
+            s.add(r.nextInt(10));
+        }
+
+
     }
 }
