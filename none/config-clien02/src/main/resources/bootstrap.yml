@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    config:
+      label: master
+      name: config
+      profile: test
+      uri: http://localhost:9200
+  rabbitmq:
+    host: 192.168.64.110
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

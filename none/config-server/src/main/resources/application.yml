@@ -1,0 +1,21 @@
+server:
+  port: 9200
+spring:
+  cloud:
+    zookeeper:
+      connect-string: 192.168.64.110:2181
+    config:
+      server:
+        git:
+          uri: https://github.com/zhangsun0403/zjk.git
+          search-paths:
+             - /zjk
+  application:
+    name: config-server9200
+  rabbitmq:
+    host: 192.168.64.110
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'

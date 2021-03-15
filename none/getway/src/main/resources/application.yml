@@ -1,0 +1,28 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: getway9527
+  datasource:
+    username: root
+    password: zjk688889
+    url: jdbc:mysql://localhost:3306/tt?serverTimezone=UTC
+#  cloud:
+#    zookeeper:
+#      connect-string: 192.168.64.110:2181
+    gateway:
+      routes:
+         - id: getway-9527
+           uri: lb://service01
+           predicates:
+              - Path=/name/{id}
+              - After=2021-02-24T14:10:03.778+08:00[Asia/Shanghai]
+           filters:
+              - AddRequestHeader=zhangzjk, chinakexuejia
+              - AddRequestParameter=red, 9527
+         - id: getway-9888
+           uri: https://www.baidu.com
+           predicates:
+              - Path=/**
+
+

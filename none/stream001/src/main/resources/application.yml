@@ -1,0 +1,28 @@
+server:
+  port: 9500
+spring:
+  application:
+    name: stream-9500
+  cloud:
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+               rabbitmq:
+                  host: 192.168.64.110
+                  port: 5672
+                  username: guest
+                  password: guest
+      bindings:
+        outputt:
+          destination: zhang
+          content-type: application/json
+          binder: defaultRabbit
+        input:
+          destination: zhang
+          content-type: application/json
+          binder: defaultRabbit
+    zookeeper:
+      connect-string: 192.168.64.110:2181
