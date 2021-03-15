@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="kuafu:war">
+    <output-path>$PROJECT_DIR$/kuafu/target</output-path>
+    <root id="archive" name="kuafu.war">
+      <element id="artifact" artifact-name="kuafu:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.scanmappers.userMapper">
+
+    <resultMap id="maps" type="com.example.demo.Entity.users">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="enabled" column="enabled"/>
+    </resultMap>
+    <select id="select" resultMap="maps">
+        SELECT username,password FROM users where username=#{username}
+    </select>
+    <insert id="insert" >
+        INSERT INTO users(username,password,enabled) VALUES(#{username},#{password},#{enabled})
+    </insert>
+    <select id="dd" resultMap="maps">
+        SELECT * from users where id in
+        <foreach collection="list" item="list" separator=",">
+            #{list}
+        </foreach>
+    </select>
+</mapper>

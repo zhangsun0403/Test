@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>登入</title>
+</head>
+<body>
+<form action="/login/zjk" method="post" >
+    <input type="text" name="username"/><br/>
+    <input type="text" name="password"/><br/>
+    <input type="hidden" name="_csrf" th:value="${'cb8299aa-9fd9-42da-a736-867c2f50cda2'}">
+    <input type="checkbox" name="remember-me" id="remember_me"/><br/>
+    <input type="submit" value="提交"/>
+    <a href="zhuce.html" >注册</a>
+</form>
+</body>
+</html>
